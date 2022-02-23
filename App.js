@@ -10,7 +10,6 @@ export default function App() {
     fetch("https://randomuser.me/api/")
       .then((response) => response.json())
       .then((json) => setData(json))
-      .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }, []);
 
@@ -26,7 +25,7 @@ export default function App() {
             justifyContent: "space-between",
           }}
         >
-          <Text style={{ fontSize: 18, color: "green", textAlign: "center" }}>
+          <Text style={{ fontSize: 20, color: "green", textAlign: "center" }}>
             Random User Info Generator
           </Text>
           <FlatList
