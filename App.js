@@ -51,7 +51,7 @@ export default function App() {
                 <Text>{item.location.city}</Text>
                 <Text>{item.email}</Text>
                 <Text>{item.phone}</Text>
-                <Button title="refresh user" onPress={() => refreshUser()} />
+                <Button title="refresh" onPress={() => refreshUser()} />
               </View>
             )}
           />
