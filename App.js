@@ -26,7 +26,7 @@ export default function App() {
           }}
         >
           <Text style={{ fontSize: 20, color: "green", textAlign: "center" }}>
-            Random User Info Generator
+            Random User Generator
           </Text>
           <FlatList
             data={data.results}
