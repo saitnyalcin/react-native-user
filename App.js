@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { Button, FlatList, Image, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   console.log(data);
 
-  useEffect(() => {
+  const refreshUser = () => {
     fetch("https://randomuser.me/api/")
       .then((response) => response.json())
       .then((json) => setData(json))
       .finally(() => setLoading(false));
-  }, []);
+  };
+  useEffect(refreshUser, []);
 
   return (
     <View style={styles.container}>
@@ -50,6 +51,7 @@ export default function App() {
                 <Text>{item.location.city}</Text>
                 <Text>{item.email}</Text>
                 <Text>{item.phone}</Text>
+                <Button title="refresh user" onPress={() => refreshUser()} />
               </View>
             )}
           />
